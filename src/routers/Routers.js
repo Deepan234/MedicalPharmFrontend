@@ -1,10 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import HomePage from '../component/pages/HomePage'
 import Login from '../component/pages/Login'
 import SignUp from '../component/pages/SignUp'
 import PrivateRoute from './PrivateRoute'
-export default function Routers() {
+function Routers() {
     return (
         <div>
             <BrowserRouter>
@@ -17,3 +18,11 @@ export default function Routers() {
         </div>
     )
 }
+
+const mapStateToProps = (state) => {
+    return {
+        isLoggedIn : state.AllMedicals.isLoggedIn
+    }
+  } 
+
+export default connect(mapStateToProps)(Routers)

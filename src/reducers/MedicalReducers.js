@@ -2,18 +2,25 @@ import { ActionTypes } from "../action/ActionsTypes";
 
 const intialStates = {
     users:[],
-    user:[]
+    user:[],
+    isLoggedIn: localStorage.getItem("isLoggedIn"),
 }
 
-export const MedicalReducers = (state=intialStates,action) =>{
-    switch(action.type){
-        case ActionTypes.CREATE_ACCOUNT:
-            return{...state,users:action.payload};
-
+const MedicalReducers = (state=intialStates,action) =>{
+    let newState = {...state};
+    switch (action.type) {
         case ActionTypes.LOGIN_ACCOUNT:
-            return{...state,users:action.payload};
-
+          newState.user = action.payload;
+          newState.isLoggedIn=localStorage.getItem("isLoggedIn");
+          break;
+        case ActionTypes.CREATE_ACCOUNT:
+          newState.user = action.payload;
+          newState.isLoggedIn=localStorage.getItem("isLoggedIn");
+          break;
         default:
-            return state;
-    }
+          newState = state;
+      }
+    return newState;
 }
+  
+  export default MedicalReducers

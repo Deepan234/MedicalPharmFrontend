@@ -1,10 +1,14 @@
-import User from "../localstorage/Users"
-import {Navigate} from "react-router-dom"
+import { Navigate } from "react-router-dom";
+import { connect } from "react-redux";
 
-const PrivateRoute = ({children}) => {
-    return(
-                User.getLoggedIn() ? children : <Navigate to="/login" />
-            )
-}
+const PrivateRoute = (props) => {
+  return props.isLoggedIn === "true" ? props.children : <Navigate to="/login" />;
+};
 
-export default PrivateRoute;
+const mapStateToProps = (state) => {
+    return {
+        isLoggedIn : state.AllMedicals.isLoggedIn
+    }
+  } 
+  
+  export default connect(mapStateToProps)(PrivateRoute);
