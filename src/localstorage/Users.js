@@ -31,6 +31,8 @@ getLoggedIn(){
      return this.isLoggedIn;
 },
 
+
+
 getUser(){
     return this.users;
 }

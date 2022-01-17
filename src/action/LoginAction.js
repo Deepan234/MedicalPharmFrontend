@@ -15,3 +15,10 @@ export const loginAccount = (user) => {
         payload:user
     }
 }
+
+export const addMedicines = (state) => {
+    return{
+        typr:ActionTypes.ADD_MEDICINES,
+        payload:state
+    }
+}

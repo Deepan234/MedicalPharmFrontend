@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { MedicalReducers } from "./MedicalReducers";
+import  MedicalReducers from "./MedicalReducers";
 
 const rootReducer = combineReducers({
     AllMedicals:MedicalReducers,

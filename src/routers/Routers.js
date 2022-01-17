@@ -4,7 +4,8 @@ import HomePage from '../component/pages/HomePage'
 import Login from '../component/pages/Login'
 import SignUp from '../component/pages/SignUp'
 import PrivateRoute from './PrivateRoute'
-export default function Routers() {
+import { connect } from 'react-redux'
+export function Routers() {
     return (
         <div>
             <BrowserRouter>
@@ -17,3 +18,16 @@ export default function Routers() {
         </div>
     )
 }
+const mapStateToProps = (state) => {
+
+    return {
+
+        isLoggedIn : state.AllMedicals.isLoggedIn
+
+    }
+
+  }
+
+
+
+export default connect(mapStateToProps)(Routers)

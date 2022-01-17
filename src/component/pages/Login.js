@@ -9,8 +9,8 @@ import {useNavigate} from "react-router-dom";
 export default function Login() {
 
     const dispatch = useDispatch();
-
-    let history = useNavigate();
+   
+    let navigate = useNavigate();
 
     const[login,setLogin] = useState(
         {
@@ -23,13 +23,12 @@ export default function Login() {
 
     const checkLogin = async() => {
         
-      const result = await axios.post(`http://localhost:9090/login`,login).then(dispatch(loginAccount(login)));
+      const result = await axios.post(`http://localhost:9090/login`,login)
       if(result.data){
-          User.login(login);
+        localStorage.setItem("isLoggedIn","true");
+        dispatch(loginAccount(login));
+        navigate('/');
       }
-      if(User.getLoggedIn()){
-        history('/');
-       }
     }
     console.log(login);
     return (
@@ -50,7 +49,7 @@ export default function Login() {
                     <option value="BUYER">BUYER</option>
                    </select>    
                 </div>
-                <button type="submit" className="btn btn-primary btn-block" onClick={(event) => {
+                <button className="btn btn-primary btn-block" onClick={(event) => {
                    checkLogin();
                    event.preventDefault();
                 }}
