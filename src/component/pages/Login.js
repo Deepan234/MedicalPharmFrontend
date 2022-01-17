@@ -1,17 +1,36 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom';
+import axios from "axios";
+import { useDispatch} from 'react-redux';
+import { loginAccount } from '../../action/LoginAction';
+import User from '../../localstorage/Users';
+import {useNavigate} from "react-router-dom";
 
 export default function Login() {
 
+    const dispatch = useDispatch();
+
+    let history = useNavigate();
 
     const[login,setLogin] = useState(
         {
-            userId:0,
+            userId:"",
             password:"",
-            userType:"",
+            userTypeDto:"",
         }
     )
 
+
+    const checkLogin = async() => {
+        
+      const result = await axios.post(`http://localhost:9090/login`,login).then(dispatch(loginAccount(login)));
+      if(result.data){
+          User.login(login);
+      }
+      if(User.getLoggedIn()){
+        history('/');
+       }
+    }
     console.log(login);
     return (
         <div>
@@ -26,12 +45,16 @@ export default function Login() {
                     <input type="password" className="form-control" placeholder="Enter Password" onChange={(event)=> setLogin({...login, password: event.target.value})}/>
                 </div>
                 <div className='form-group'>
-                   <select name="UserType" onChange={(event)=> setLogin({...login,userType: event.target.value})}>
+                   <select name="UserType" onChange={(event)=> setLogin({...login,userTypeDto: event.target.value})}>
                     <option value="ADMIN">ADMIN</option>
                     <option value="BUYER">BUYER</option>
                    </select>    
                 </div>
-                <button type="submit" className="btn btn-primary btn-block">Submit</button>
+                <button type="submit" className="btn btn-primary btn-block" onClick={(event) => {
+                   checkLogin();
+                   event.preventDefault();
+                }}
+                >Submit</button>
                 <Link to="/signup">SignUp</Link>
             </form>
         </div>
