@@ -18,7 +18,14 @@ export const loginAccount = (user) => {
 
 export const addMedicines = (state) => {
     return{
-        typr:ActionTypes.ADD_MEDICINES,
+        type:ActionTypes.ADD_MEDICINES,
         payload:state
+    }
+}
+
+export const getAllMedicines = (medicines) => {
+    return{
+        type:ActionTypes.GET_ALL_MEDICINES,
+        payload:medicines
     }
 }

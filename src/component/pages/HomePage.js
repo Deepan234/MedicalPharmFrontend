@@ -1,6 +1,8 @@
 import React from 'react'
 import User from '../../localstorage/Users'
+import NavBar from '../layout/NavBar'
 import MedicineAddingPage from './MedicineAddingPage'
+import MedicineListing from './MedicineListing'
 export default function HomePage() {
 
 
@@ -16,8 +18,9 @@ export default function HomePage() {
     const homeScreenAdmin = () => {
 
         return(
+            
             <div>
-                <MedicineAddingPage/>
+                <MedicineListing/>
             </div>
         )
     }
@@ -28,6 +31,7 @@ export default function HomePage() {
     return (
 
         <div>
+        <NavBar/>
         {(User.getUser().userTypeDto==="BUYER")?
         <div>{homeScreenBuyers()}</div>: 
         <div>

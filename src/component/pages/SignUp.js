@@ -11,7 +11,7 @@ export default function SignUp() {
     const[signup,setSignup] = useState({
         userId:0,
         password:"",
-        userTypeDto:"BUYER",
+        userTypeDto:"ADMIN",
     })
     console.log(signup);
 
@@ -36,7 +36,7 @@ export default function SignUp() {
                 <button type="submit" className="btn btn-primary btn-block"  onClick={()=>{
                     createAccount();
                 }}>Submit</button>
-                <Link to="/">Login</Link>
+                <Link to="/login">Login</Link>
         </div>
     )
 }

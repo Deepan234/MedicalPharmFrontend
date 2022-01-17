@@ -26,6 +26,7 @@ export default function Login() {
       const result = await axios.post(`http://localhost:9090/login`,login)
       if(result.data){
         localStorage.setItem("isLoggedIn","true");
+        User.login(login);
         dispatch(loginAccount(login));
         navigate('/');
       }

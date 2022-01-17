@@ -3,7 +3,8 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { addMedicines } from '../../action/LoginAction';
 
-export default function MedicineAddingPage() {
+export default function MedicineAddingPage(props) {
+
 
     const[state,setState] = useState({
        medicineId:0,
