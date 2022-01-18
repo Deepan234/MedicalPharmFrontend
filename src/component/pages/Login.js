@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLinkClickHandler } from 'react-router-dom';
 import axios from "axios";
 import { useDispatch} from 'react-redux';
 import { loginAccount } from '../../action/LoginAction';
@@ -9,7 +9,6 @@ import {useNavigate} from "react-router-dom";
 export default function Login() {
 
     const dispatch = useDispatch();
-   
     let navigate = useNavigate();
 
     const[login,setLogin] = useState(
@@ -20,10 +19,16 @@ export default function Login() {
         }
     )
 
+    
+
+
 
     const checkLogin = async() => {
         
-      const result = await axios.post(`http://localhost:9090/login`,login)
+      const result = await axios.post(`http://localhost:9090/login`,login,{
+        'Access-Control-Allow-Credentials':true   
+      })
+      console.log(result);
       if(result.data){
         localStorage.setItem("isLoggedIn","true");
         User.login(login);

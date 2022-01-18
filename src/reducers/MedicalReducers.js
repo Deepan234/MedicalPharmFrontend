@@ -6,6 +6,7 @@ const intialStates = {
     user:[],
     medicine:[],
     medicines:[],
+    medi:[],
     isLoggedIn: localStorage.getItem("isLoggedIn")
 }
 
@@ -55,7 +56,7 @@ const MedicalReducers = (state = intialStates, action) => {
 
     case ActionTypes.ADD_MEDICINES:
 
-        newState.medicine = action.payload;
+        newState.medicines = action.payload;
   
         break;
 
@@ -65,6 +66,20 @@ const MedicalReducers = (state = intialStates, action) => {
 
          break;
 
+    case ActionTypes.GET_MEDICINES:
+
+         newState.medi = action.payload;
+         break;
+
+    case ActionTypes.UPDATE_MEDICINES:
+
+        newState.medicines = action.payload;
+        break;
+
+    case ActionTypes.LOGOUT:
+
+        newState.user = [];
+        break;
     default:
   
         newState = state;

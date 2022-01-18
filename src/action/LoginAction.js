@@ -29,3 +29,24 @@ export const getAllMedicines = (medicines) => {
         payload:medicines
     }
 }
+
+export const getMedicines = (medicines) =>{
+    return{
+        type:ActionTypes.GET_MEDICINES,
+        payload:medicines
+    }
+}
+
+export const updateMedicines = (medicines) => {
+    return{
+        type:ActionTypes.UPDATE_MEDICINES,
+        payload:medicines
+    }
+}
+
+export const logoutAccount = (user) => {
+    return{
+        type:ActionTypes.LOGOUT,
+        payload:user
+    }
+}

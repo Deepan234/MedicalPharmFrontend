@@ -90,8 +90,9 @@ export default function MedicineAddingPage(props) {
             <div className="text-center mb-3">
               <button
                 className="btn btn-primary  w-25"
-                onClick={()=>{
+                onClick={(event)=>{
                     AddMedicines();
+                    event.preventDefault();
                 }}
               >
                 Submit
