@@ -3,10 +3,13 @@ import { ActionTypes } from "../action/ActionsTypes";
 
 const intialStates = {
     users:[],
+    rating:[],
     user:[],
+    diseases:[],
     medicine:[],
     medicines:[],
     medi:[],
+    ratingsId:[],
     isLoggedIn: localStorage.getItem("isLoggedIn")
 }
 
@@ -45,13 +48,13 @@ const MedicalReducers = (state = intialStates, action) => {
   
         break;
   
-    //   case ActionType.LOGOUT:
+      case ActionTypes.LOGOUT:
   
-    //     newState.user=[];
+        newState.user=[];
   
-    //     newState.isLoggedIn=localStorage.getItem("isLoggedIn");
+        newState.isLoggedIn=localStorage.getItem("isLoggedIn");
   
-    //     break;
+        break;
 
 
     case ActionTypes.ADD_MEDICINES:
@@ -76,10 +79,60 @@ const MedicalReducers = (state = intialStates, action) => {
         newState.medicines = action.payload;
         break;
 
-    case ActionTypes.LOGOUT:
+   
 
-        newState.user = [];
+    case ActionTypes.DELETE_MEDICINES:
+        
         break;
+
+    case ActionTypes.GET_ALL_DISEASE:
+
+       newState.diseases =  action.payload;
+       break;
+
+    case ActionTypes.ADD_DISEASE:
+
+       newState.diseases = action.payload;
+       break;
+
+
+    case ActionTypes.UPDATE_DISEASE:
+      
+    newState.diseases = action.payload;
+    break;
+
+    case ActionTypes.DELETE_DISEASE:
+
+    break;
+
+    case ActionTypes.USER_RATING_GETALL:
+    newState.rating = action.payload;
+    break;
+
+    case ActionTypes.ADD_RATINGS:
+
+    newState.rating = action.payload;
+    break;
+
+    case ActionTypes.GET_RATINGS_BY_ID:
+
+    newState.ratingsId =action.payload;
+    break;
+
+    case ActionTypes.UPDATE_RATINGS:
+    
+    newState.rating = action.payload;
+    break;
+
+    case ActionTypes.DELETE_RATINGS:
+    break;
+
+
+    case ActionTypes.UPDATE_PASSWORD:
+
+    newState.user = action.payload;
+    break;
+
     default:
   
         newState = state;

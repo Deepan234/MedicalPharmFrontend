@@ -113,9 +113,8 @@ export const UpdateMedicines = (props) => {
           <div className="text-center">
             <button
               className="btn btn-primary  w-25"
-              onClick={(event) => {
+              onClick={() => {
                 UpdateMedicines();
-                event.preventDefault();
               }}
             >
               Submit

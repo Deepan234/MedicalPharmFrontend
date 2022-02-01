@@ -1,0 +1,15 @@
+
+.style{
+    padding-left:  150px !important;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+}
+
+.container-bg{
+    background: black;
+    color:white;
+}
+
+tbody{
+    color: white;
+}

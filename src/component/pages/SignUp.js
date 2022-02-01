@@ -11,7 +11,7 @@ export default function SignUp() {
     const[signup,setSignup] = useState({
         userId:0,
         password:"",
-        userTypeDto:"ADMIN",
+        userTypeDto:"BUYER",
     })
     console.log(signup);
 
@@ -23,7 +23,10 @@ export default function SignUp() {
 
 
     return (
-        <div>
+        <section class="container-fluid bg">
+        <section class= "row justify-content-center">
+        <section class="col-18 col-sm-7 col-md-3"> 
+          <form className='form-container'>
             <h3>SignUp</h3>
                 <div className="form-group">
                     <label>UserName</label>
@@ -33,10 +36,18 @@ export default function SignUp() {
                     <label>Password</label>
                     <input type="password" className="form-control" placeholder="Enter Password" onChange={(event)=> setSignup({...signup, password: event.target.value})}/>
                 </div>
-                <button type="submit" className="btn btn-primary btn-block"  onClick={()=>{
+                <br/>
+                <div className='form-group'>
+                <button type="submit" className="btn btn-primary btn-lg btn-block"  onClick={()=>{
                     createAccount();
-                }}>Submit</button>
-                <Link to="/login">Login</Link>
-        </div>
+                }}>CREATE</button>
+                <Link to="/login">
+                <button className='btn btn-secondary btn-lg btn-block'>LOGIN </button>
+                </Link>
+                </div>
+                </form>
+        </section>
+        </section>
+        </section>
     )
 }

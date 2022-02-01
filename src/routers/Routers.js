@@ -5,6 +5,9 @@ import Login from '../component/pages/Login'
 import SignUp from '../component/pages/SignUp'
 import PrivateRoute from './PrivateRoute'
 import { connect } from 'react-redux'
+import MedicineDiseaseListing from '../component/pages/MedicineDiseaseListing'
+import ProfilePage from '../component/pages/ProfilePage'
+import About from '../component/pages/About'
 export function Routers() {
     return (
         <div>
@@ -13,6 +16,9 @@ export function Routers() {
                 <Route  path="/signup" element={<SignUp/>}></Route>
                 <Route path="/login" element={<Login/>}></Route>
                 <Route path="/" element={<PrivateRoute><HomePage/></PrivateRoute>} exact={true}/>
+                <Route path="/disease" element={<PrivateRoute><MedicineDiseaseListing/></PrivateRoute>}/>
+                <Route path="/profile" element={<PrivateRoute><ProfilePage/></PrivateRoute>}/>
+                <Route path="/about" element={<PrivateRoute><About/></PrivateRoute>}/>
             </Routes>
             </BrowserRouter>
         </div>

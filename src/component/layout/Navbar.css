@@ -1,0 +1,60 @@
+.btns{
+    border: none;
+    background: transparent;
+    padding: 6px 16px;
+    font-size: 1.1rem;
+    color:white;
+    background: rgb(0,212,212);
+    border-radius: 5px;
+    transition: 0.3s all ease-out;
+    cursor: pointer;
+}
+
+.btns:hover{
+    color:rgb(0,212,212);
+    background: white;
+
+}
+
+.navbar-logo{
+    color: rgb(9, 10, 83);
+    text-decoration: none;
+    padding-left: 15px;
+    padding-bottom: 12px;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 8rem;
+    font-weight: bold;
+
+}
+
+.naviblue{
+    display: flex;
+    list-style: none;
+    text-align: center;
+    width: 70vh;
+    justify-content: flex-end;
+    margin-right: 1rem;
+    margin-left: 45rem;
+}
+
+.navigreen{
+    display: flex;
+    align-items: center;
+}
+
+.navigreen a{
+    text-decoration: none;
+    color: rgb(22, 38, 109);
+    font-size: 1.1rem;
+    margin-right: 2rem;
+    padding: 6px 16px;
+    border-radius: 5px;
+}
+
+.navigreen a:hover {
+    background: rgb(0,212,212);
+}
+

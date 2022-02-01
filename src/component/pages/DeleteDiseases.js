@@ -1,35 +1,42 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { deleteMedicinesAction } from "../../action/LoginAction";
+import { deleteDiseasesAction } from "../../action/LoginAction";
 
-
-export const DeleteMedicine = (props) => {
+export const DeleteDisease = (props) => {
   const[state,setState] = useState(
-      {
-          medicineId:props.id,
-          medicineName:props.name,
-          price:props.price,
-          minAge:props.minAge,
-          maxAge:props.maxAge
-      }
+    {
+      entryId:props.id,
+      medicineDetails:{
+        medicineId:props.medicineId,
+        medicineName:"",
+        price:0,
+        minAge:0,
+        maxAge:0
+      },
+      diseaseName:props.diseaseName
+   }
   )
   const dispatch = useDispatch();
   console.log(state);
-  const deleteMedicines = async () => {
+  const deleteDiseases = async () => {
     const result= await axios
-      .delete(`http://localhost:9090/MedicineDetail/Delete`,{data:{
-        medicineId:props.id,
-        medicineName:props.name,
-        price:props.price,
-        minAge:props.minAge,
-        maxAge:props.maxAge 
-      }})
+      .delete(`http://localhost:9090/mapDisease/delete`,{data:{
+        entryId:props.id,
+        medicineDetails:{
+          medicineId:props.medicineId,
+          medicineName:"",
+          price:0,
+          minAge:0,
+          maxAge:0
+        },
+        diseaseName:props.diseaseName
+     }})
       .catch((err) => {
         console.log("Error ", err);
       })
       .then(alert("Deleted Successfully"));
-    dispatch(deleteMedicinesAction(result.data));
+    dispatch(deleteDiseasesAction(result.data));
   };
 
   return (
@@ -41,7 +48,7 @@ export const DeleteMedicine = (props) => {
             <button
               className="btn btn-primary  w-25"
               onClick={() => {
-                deleteMedicines();
+                deleteDiseases();
               }}
             >
               Submit

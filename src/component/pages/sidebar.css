@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+
+}
+
+.home{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    
+}
+
+.dead{
+    width: 200px;
+    height: 300px;
+    border-radius: 5px;
+}
+
+  
+.bg{
+    background: url("https://images.unsplash.com/photo-1631649879262-5842d47e49c4?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNXx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+    background-repeat: no-repeat;
+    width:100%;
+    height:100%;
+    background-size:cover;
+
+}
+
+.slider{
+    display: flex;
+    align-items: flex-start;
+}
+
+.containerss{
+    margin-left: 200px;
+    padding: 30px;
+}
+
+.con{
+    margin-left: 200px;
+    padding: 30px;
+}
+
+.don{
+    font-family: 'Playfair Display', serif;
+    font-size: medium;
+}
+
+.dons{
+    font-family: 'Playfair Display', serif;
+    font-size: small;
+}
+
+.doned{
+    font-family: 'Playfair Display', serif;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.lens{
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    text-decoration: solid;
+}

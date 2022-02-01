@@ -50,3 +50,80 @@ export const logoutAccount = (user) => {
         payload:user
     }
 }
+
+export const deleteMedicinesAction = (medicines) => {
+     return{
+         type:ActionTypes.DELETE_MEDICINES,
+         payload:medicines
+     }   
+}
+
+export const getAllDisease = (disease) => {
+     return{
+         type:ActionTypes.GET_ALL_DISEASE,
+         payload:disease
+     }
+}
+
+export const addDisease = (disease) => {
+    return{
+        type:ActionTypes.ADD_DISEASE,
+        payload:disease
+    }
+}
+
+export const updateDiseases = (disease) => {
+    return{
+        type:ActionTypes.UPDATE_DISEASE,
+        payload:disease
+    }
+}
+
+export const deleteDiseasesAction = (disease) => {
+    return{
+        type:ActionTypes.DELETE_DISEASE,
+        payload:disease
+    }
+}
+
+export const userRatingGetAll = (rating) => {
+    return{
+        type:ActionTypes.USER_RATING_GETALL,
+        payload:rating
+    }
+}
+
+export const addRatings = (rating) => {
+    return{
+        type:ActionTypes.ADD_RATINGS,
+        payload:rating
+    }
+} 
+
+export const getRatingById = (rating) => {
+    return{
+        type:ActionTypes.GET_RATINGS_BY_ID,
+        payload:rating
+    }
+}
+
+export const updateRating = (rating) => {
+    return{
+        type:ActionTypes.UPDATE_RATINGS,
+        payload:rating
+    }
+}
+
+export const deleteRating =(rating) => {
+    return{
+        type:ActionTypes.DELETE_RATINGS,
+        payload:rating
+    }
+}
+
+export const updatePasswords = (user) => {
+    return{
+        type:ActionTypes.UPDATE_PASSWORD,
+        payload:user
+    }
+}

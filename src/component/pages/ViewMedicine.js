@@ -35,11 +35,11 @@ export const ViewMedicine = (props) => {
   };
 
   return (
-    <div className="container">
+      <div className="container">
       <div className="row p-5">
         <div className="h4 p-2">Medicine Id : {data.medicineId}</div>
         <div className=" h4 p-2">Medicine Name : {data.medicineName}</div>
-        <div className="h4 p-2">Price : {data.price}</div>\
+        <div className="h4 p-2">Price : {data.price}</div>
         <div className="h4 p-2">Minimum age : {data.minAge}</div>
         <div className="h4 p-2">Maximum age : {data.maxAge}</div>
         <button

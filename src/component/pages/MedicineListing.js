@@ -5,13 +5,15 @@ import axios from 'axios';
 import { getAllMedicines } from '../../action/LoginAction';
 import CustomModal from '../../custommodal/CustomModal';
 export default function MedicineListing() {
-
   const [id, setId] = useState(0);
   const medicines = useSelector((state) => state.AllMedicals.medicines)
   console.log(medicines);
   const dispatch = useDispatch();
   const [element, setElement] = useState("");
-
+  const [name,setName] = useState("");
+  const [price,setPrice] =  useState(0);
+  const [minAge,setMinAge] = useState(0);
+  const [maxAge,setMaxAge] = useState(0);
   const [data, setData] = useState(medicines);
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -30,10 +32,14 @@ export default function MedicineListing() {
     setElement("update");
     setId(id);
   };
-  const onClickDeleteFunction = (id) => {
+  const onClickDeleteFunction = (id,name,price,minAge,maxAge) => {
     setModalOpen(true);
     setElement("delete");
     setId(id);
+    setName(name);
+    setPrice(price);
+    setMinAge(minAge);
+    setMaxAge(maxAge);
   };
 
   const fetchMedicines = async () => {
@@ -44,6 +50,7 @@ export default function MedicineListing() {
       });
     dispatch(getAllMedicines(result.data));
     setData(result.data);
+    console.log(result.data);
   }
 
   useEffect(() => {
@@ -74,6 +81,7 @@ export default function MedicineListing() {
                 {data &&
                   data.map((medi) => {
                     const { medicineId, medicineName, price, minAge, maxAge } = medi;
+                    console.log(medi);
                     return (
                       <tr key={medicineId}>
                         <td>{medicineId}</td>
@@ -100,7 +108,7 @@ export default function MedicineListing() {
                         <td>
                           <button
                             className="btn btn-outline-danger "
-                            onClick={()=>onClickDeleteFunction(medicineId)}
+                            onClick={()=>onClickDeleteFunction(medicineId,medicineName,price,minAge,maxAge)}
                           >
                             Delete
                           </button>
@@ -157,7 +165,13 @@ export default function MedicineListing() {
         setModalOpen={setModalOpen}
         element={element}
         id={id}
+        name={name}
+        price={price}
+        minAge={minAge}
+        maxAge={maxAge}
       />
+      <br/>
+      <br/>
     </div>
   )
 }

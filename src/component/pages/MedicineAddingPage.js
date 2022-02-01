@@ -22,6 +22,7 @@ export default function MedicineAddingPage(props) {
 
 
     return (
+      <div className='container-bg'>
         <div className="container">
         <div className="row">
           <form>
@@ -90,9 +91,8 @@ export default function MedicineAddingPage(props) {
             <div className="text-center mb-3">
               <button
                 className="btn btn-primary  w-25"
-                onClick={(event)=>{
+                onClick={()=>{
                     AddMedicines();
-                    event.preventDefault();
                 }}
               >
                 Submit
@@ -100,6 +100,7 @@ export default function MedicineAddingPage(props) {
             </div>
           </form>
         </div>
+      </div>
       </div>
     )
 }
