@@ -1,21 +1,22 @@
 
 
 .bg{
-    background: url("https://images.unsplash.com/photo-1496347646636-ea47f7d6b37b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60");
-    background-repeat: no-repeat;
+    background: url("https://media.istockphoto.com/photos/coronavirus-covid19-new-variant-mutation-picture-id1336071300?b=1&k=20&m=1336071300&s=170667a&w=0&h=PO9o_qaO--nJAVoM35NW0uBEwnVN22UiljaX2if1kfM=");
     width:100%;
-    height:100vh;
+    height:150vh;
+    background-repeat: no-repeat;
     background-size:cover;
 
 }
 
 .form-container{
-    position:absolute;
-    top:15vh;
+    position:relative;
+    justify-content: center;
+    top:5vh;
     background:black;
     color: white;
-    padding:40px;
+    padding: 40px;
     border-radius: 10px;
-    box-shadow: 1px 10px 10px 1px #000;
+    box-shadow: 0px 10px 10px 1px #000;
     max-width: 500px;
 }

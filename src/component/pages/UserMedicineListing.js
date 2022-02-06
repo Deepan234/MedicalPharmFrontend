@@ -56,7 +56,12 @@ export default function UserMedicineListing() {
     setData(filterdata);
   };
 
-
+  const filterByNameGive = (event) => {
+    const filterUdata = medico.filter((medico)=>
+    medico.diseaseName.toLowerCase().includes(event.target.value.toLowerCase())
+    );
+    setUData(filterUdata);
+  }
 
   const onClickAddFunction = (userID,enId,medicalName,disName) => {
     setModalOpen(true);
@@ -126,6 +131,16 @@ export default function UserMedicineListing() {
                  <h4>ALL ENTRIES ID'S FOR {localStorage.getItem("userId").toUpperCase()} IS HERE:</h4>
                </div>
                <br /><br />
+               <input
+              type="text"
+              className="form-control"
+              placeholder="Enter DiseaseName"
+              onChange={(event) => {
+                filterByNameGive(event);
+              }}
+            />
+            <br/>
+            <br/>
                 <table className="table table-bordered table-hover m-auto">
                   <thead className="table-light ">
                     <tr className="table-secondary">

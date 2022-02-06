@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { updatePasswords } from '../../action/LoginAction';
+
 export default function UpdatePassword(props) {
 
     const[state,setState] = useState({

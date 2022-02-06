@@ -1,8 +1,9 @@
 
 import { ActionTypes } from './ActionsTypes'
-
+import { useNavigate } from 'react-router-dom'
 
 export const signUpAccount = (user) =>{
+    
     return{
         type:ActionTypes.CREATE_ACCOUNT,
         payload:user
@@ -10,6 +11,7 @@ export const signUpAccount = (user) =>{
 }
 
 export const loginAccount = (user) => {
+    console.log(user);
     return{
         type:ActionTypes.LOGIN_ACCOUNT,
         payload:user

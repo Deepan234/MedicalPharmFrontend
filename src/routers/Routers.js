@@ -8,6 +8,7 @@ import { connect } from 'react-redux'
 import MedicineDiseaseListing from '../component/pages/MedicineDiseaseListing'
 import ProfilePage from '../component/pages/ProfilePage'
 import About from '../component/pages/About'
+import WithNavigate from '../component/pages/WithNavigate'
 export function Routers() {
     return (
         <div>
