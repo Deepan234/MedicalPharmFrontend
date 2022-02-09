@@ -9,6 +9,7 @@ import MedicineDiseaseListing from '../component/pages/MedicineDiseaseListing'
 import ProfilePage from '../component/pages/ProfilePage'
 import About from '../component/pages/About'
 import WithNavigate from '../component/pages/WithNavigate'
+import Contact from '../component/pages/Contact'
 export function Routers() {
     return (
         <div>
@@ -20,6 +21,7 @@ export function Routers() {
                 <Route path="/disease" element={<PrivateRoute><MedicineDiseaseListing/></PrivateRoute>}/>
                 <Route path="/profile" element={<PrivateRoute><ProfilePage/></PrivateRoute>}/>
                 <Route path="/about" element={<PrivateRoute><About/></PrivateRoute>}/>
+                <Route path="/contact" element={<PrivateRoute><Contact/></PrivateRoute>}/>
             </Routes>
             </BrowserRouter>
         </div>

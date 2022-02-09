@@ -1,0 +1,32 @@
+{
+  "contactdetails": [
+    {
+      "id": 1,
+      "name": "Ela",
+      "emailId": "ela@gmail.com",
+      "contactNo": "987364732",
+      "message": "Need to contact"
+    },
+    {
+      "id": 3,
+      "name": "deepan chakravarthy",
+      "emailId": "deepangtm2000@gmail.com",
+      "contactNo": "978269680",
+      "message": "need to contact"
+    },
+    {
+      "id": "id2",
+      "name": "rohith",
+      "emailId": "rohith@gmail.com",
+      "contactNo": "983874382",
+      "message": "need to contact"
+    },
+    {
+      "id": "id7",
+      "name": "rohith",
+      "emailId": "rohith@gmail.com",
+      "contactNo": "849839829",
+      "message": "need to contact"
+    }
+  ]
+}
